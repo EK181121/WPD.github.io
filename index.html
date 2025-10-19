@@ -6,16 +6,41 @@
     <style>
       * {margin: 0; padding: 0;}
       body {width: 100%; margin: 0 auto;}
-      header {width: 100%; background: #eaeaea;}
-      nav {width: 100%; color: black; background: rgb(243, 232, 82);}
-      main {width: 70%; height: 700px; background: skyblue; float: left;}
-      aside {width: 30%; height: 700px; background: pink; float: right;}
+      header {width: 100%; background: #de89e8;}
+      nav {width: 100%; color: black; background: linear-gradient(246deg,skyblue,orange);}
+      main {width: 70%; height: 1000px; background: linear-gradient(135deg,skyblue,white,orange); float: left;}
+      aside {width: 30%; height: 1000px; background: linear-gradient(pink,rgb(222, 62, 243)); float: right;}
       footer {width: 100%; background: gray; clear: both;}
+      ol {
+      list-style-type: upper-alpha; /* 顯示 A, B, C */
+      margin-left: 40px;           /* 給一點左邊距，讓清單縮排 */
+      }
+      dl {
+        margin-bottom: 20px;
+      }
+
+      dt {
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      dd {
+        margin-left: 20px;
+      }
+      blockquote {
+        margin: 20px auto;          /* 與上下元素留距離，並置中 */
+        padding: 10px 20px;         /* 內距讓文字不貼邊 */
+        background: rgba(255, 255, 255, 0.7); /* 半透明白底 */
+        border-left: 5px solid #555; /* 左側強調線 */
+        width: 80%;                 /* 不要太寬 */
+        color: #222;                /* 提高可讀性 */
+        border-radius: 10px;        /* 圓角外觀 */
+      }
       img {
       display: block;       /* 把圖片變成區塊元素 */
       margin-left: auto;    /* 左邊自動留空 */
       margin-right: 0;      /* 右邊貼齊 */
-      width: 200px;         /* 調整圖片大小 */
+      /*width: 200px;         /* 調整圖片大小 */
     }
       .move {
         position: relative;
@@ -23,43 +48,66 @@
         }
 
         @keyframes slide {
-            0%   { left: 0;   top: 0; }       /* 左上 */
-            25%  { left: -600px; top: 0; }     /* 右上 */
-            50%  { left: -600px; top: 500px; } /* 右下 */
-            75%  { left: 0;   top: 500px; }   /* 左下 */
+            0%   { left: 0;   top: 0; }      
+            25%  { left: -600px; top: 0; }    
+            50%  { left: -600px; top: 500px; } 
+            75%  { left: 0;   top: 500px; }  
             100% { left: 0;   top: 0; }
         }
     </style>
   </head>
   <body>
-    <header><h1>歡迎來看秦始皇騎北極熊</h1></header>
+    <header>
+      <pre>
+        <h1>歡迎來看秦始皇騎北極熊</h1>
+        <p>往下觀看秦始皇騎北極熊</p>
+      </pre>
+    </header>
     <nav>
-      <dl>
-        <dt><b><i><u>秦始皇騎北極熊，北極熊騎秦始皇</u></i></b></dt>
-          <dd>
+        <article>
+          <h1><b><i>秦始皇騎北極熊，北極熊騎秦始皇</i></b></h1>
+          <p>
             秦始皇誕生日是西元前<time datetime="0259-02-18">259年02月18日</time><br>
-            <a href="https://wattbrother.com/371569" target="_blank">秦始皇騎北極熊介紹</a><br>
-          </dd>
-      </dl>
+            <strong><em><a href="https://wattbrother.com/371569" target="_blank">秦始皇騎北極熊介紹</a></em></strong>
+          </p>    
+        </article>
     </nav>
     <main>
-        <h1>
-            <figure>
-                <img srcset="chin3.gif 200w, chin2.gif 400w, chin.gif 800w"
+      <ul>
+        <li>請看下表
+          <ol type="A">
+            <li>秦始皇騎北極熊</li>
+            <li>北極熊騎秦始皇</li>
+            <li>秦始皇騎秦始皇</li>
+          </ol>
+        </li>
+      </ul>
+      <figure>
+        <img srcset="chin3.gif 200w, chin2.gif 400w, chin.gif 800w"
                         class="move"
                         sizes="50vw"
                         src="chin.gif"
                         alt="秦始皇騎北極熊">
-                <figcaption>秦始皇騎北極熊</figcaption>
-            </figure>
-        </h1>
+      </figure>
+      <figcaption>秦始皇騎北極熊</figcaption>
     </main>
     <aside>
-      <h1>
-        <video src="videoplayback.mp4" controls autoplay loop muted></video>
-      </h1>
+      <video src="videoplayback.mp4" controls autoplay loop muted></video>
+      <h1>原歌曲</h1>
+      <audio src="DJ.mp4" controls></audio>
+      <blockquote>秦始皇騎北極熊影片及原歌曲</blockquote>
+      <picture>
+        <source media="(max-width: 799px)" srcset="chin.gif">
+        <source media="(min-width: 800px)" srcset="chinup.webp">
+        <img src="chinup.webp">
+      </picture>
+      <object data="introduce.avi"></object>
     </aside>
     <footer>
+      <dl>
+          <dt>秦始皇騎北極熊表格</dt>
+          <dd>表格內分別為秦始皇騎北極熊，北極熊騎秦始皇，秦始皇騎秦始皇，供參考</dd>
+      </dl>
       <h1>
         <table border="1">
           <tr>
@@ -83,6 +131,8 @@
           </tr>
         </table>
       </h1>
+      <p>聯絡資訊:</p>
+      <address><a href="mailto:c113181121@nkust.edu.tw" target="_blank">c113181121@nkust.edu.tw</a></address>
     </footer>
   </body>
 </html>
